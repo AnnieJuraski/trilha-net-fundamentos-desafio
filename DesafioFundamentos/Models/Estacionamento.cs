@@ -87,8 +87,12 @@ namespace DesafioFundamentos.Models
                     {
                         if (int.TryParse(Console.ReadLine(), out qtdeHoras))
                         {
-                            Console.WriteLine($" Total de horas: {qtdeHoras}h \n");
+                            Console.WriteLine($"Total de horas: {qtdeHoras}h \n");
                             break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Por favor, digite um número inteiro válido");
                         }
                     }
                     decimal valorTotal = qtdeHoras * PrecoPorHora + PrecoInicial;
@@ -97,7 +101,7 @@ namespace DesafioFundamentos.Models
                     var veiculoASerRemovido = _veiculosEstacionados.Find(v => v.Placa == placa);
                     _veiculosEstacionados.Remove(veiculoASerRemovido);
 
-                    Console.WriteLine($"O veículo com a placa {veiculoASerRemovido.Placa} foi removido " +
+                    Console.WriteLine($"O veículo com a placa \"{veiculoASerRemovido.Placa}\" foi removido " +
                                          $"e a vaga de nº {veiculoASerRemovido.NumeroVaga} está livre. \n" +
                                          $"O valor a ser pago é de {valorTotal.ToString("C")}");
                 }

@@ -15,8 +15,6 @@ while (true)
 {
     if(decimal.TryParse(Console.ReadLine(), out precoInicial))
     {
-        Console.Write("Valor fixo: ");
-        Console.WriteLine(precoInicial.ToString("C"));
         break;
     }
     else
@@ -31,8 +29,6 @@ while (true)
 {
     if (decimal.TryParse(Console.ReadLine(),out precoPorHora))
     {
-        Console.Write("Valor por hora: ");
-        Console.WriteLine(precoPorHora.ToString("C"));
         break;
     }
     else
@@ -42,14 +38,12 @@ while (true)
 }
 
 
-// Instancia a classe Estacionamento, já com os valores obtidos anteriormente
 Estacionamento meuEstacionamento = new Estacionamento(precoInicial, precoPorHora);
 
-/*string opcao = string.Empty;*/
 
 bool exibirMenu = true;
 
-// Realiza o loop do menu
+
 while (exibirMenu)
 {
     Console.Clear();
