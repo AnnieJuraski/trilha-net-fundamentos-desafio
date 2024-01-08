@@ -5,21 +5,12 @@ namespace DesafioFundamentos.Models
     public class Estacionamento
     {
 
-        private decimal _preçoInicial;
-        private decimal _preçoPorHora;
+        
         private List<(string Placa, int NumeroVaga)> _veiculosEstacionados = new List<(string, int)>();
+        private decimal PrecoInicial { get; set; }
+        private decimal PrecoPorHora { get; set; }
 
-        public decimal PrecoInicial
-        {
-            get => _preçoInicial;
-            set => _preçoInicial = value;
-        }
 
-        public decimal PrecoPorHora
-        {
-            get => _preçoPorHora;
-            set => _preçoPorHora = value;
-        }
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
