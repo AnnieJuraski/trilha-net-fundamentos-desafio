@@ -7,35 +7,24 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial;
 decimal precoPorHora;
 
+
+
 Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +     
                       "Digite o preço inicial:");
 
 
-while (true)
+while (!decimal.TryParse(Console.ReadLine(), out precoInicial))    
 {
-    if(decimal.TryParse(Console.ReadLine(), out precoInicial))
-    {
-        break;
-    }
-    else
-    {
-        Console.WriteLine("Por favor, digite um valor válido!");
-    }
+    Console.WriteLine("Por favor, digite um valor válido!");
 }
 
 Console.WriteLine("Agora digite o valor do preço por hora");
 
-while (true)
+while (!decimal.TryParse(Console.ReadLine(), out precoPorHora))
 {
-    if (decimal.TryParse(Console.ReadLine(),out precoPorHora))
-    {
-        break;
-    }
-    else
-    {
-        Console.WriteLine("Por favor, digite um valor válido!");
-    }
+    Console.WriteLine("Por favor, digite um valor válido!");
 }
+
 
 
 Estacionamento meuEstacionamento = new Estacionamento(precoInicial, precoPorHora);
@@ -52,6 +41,8 @@ while (exibirMenu)
     Console.WriteLine("2 - Remover veículo");
     Console.WriteLine("3 - Listar veículos");
     Console.WriteLine("4 - Encerrar");
+
+
 
     switch (Console.ReadLine())
     {
@@ -78,6 +69,8 @@ while (exibirMenu)
 
     Console.WriteLine("Pressione uma tecla para continuar");
     Console.ReadKey();
+    Console.Clear();
 }
 
 Console.WriteLine("O programa se encerrou");
+

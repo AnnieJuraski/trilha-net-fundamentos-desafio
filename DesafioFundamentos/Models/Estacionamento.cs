@@ -2,6 +2,7 @@ using System.Numerics;
 
 namespace DesafioFundamentos.Models
 {
+    
     public class Estacionamento
     {
 
@@ -41,7 +42,7 @@ namespace DesafioFundamentos.Models
                 }
                 else
                 {
-                    Random random = new Random();
+                    Random random = new();
                     int numeroDaVaga;
 
                     while (true)
@@ -74,18 +75,16 @@ namespace DesafioFundamentos.Models
                     Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado");
 
                     int qtdeHoras;
-                    while (true)
+                    while (!int.TryParse(Console.ReadLine(), out qtdeHoras))
                     {
-                        if (int.TryParse(Console.ReadLine(), out qtdeHoras))
-                        {
-                            Console.WriteLine($"Total de horas: {qtdeHoras}h \n");
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Por favor, digite um número inteiro válido");
-                        }
+                        Console.WriteLine("Por favor, digite um número inteiro válido");                        
                     }
+
+                    Console.WriteLine($"Preço Inicial: {PrecoInicial.ToString("C")}");
+                    Console.WriteLine($"Preço por hora: {PrecoPorHora.ToString("C")}");
+
+                    Console.WriteLine($"Total de horas: {qtdeHoras}h \n");
+
                     decimal valorTotal = qtdeHoras * PrecoPorHora + PrecoInicial;
 
 
@@ -116,7 +115,7 @@ namespace DesafioFundamentos.Models
 
                 foreach(var veiculo in _veiculosEstacionados)
                 {
-                    Console.WriteLine($"O veículo com a placa \"{veiculo.Placa}\" está estacionado" +
+                    Console.WriteLine($"O veículo com a placa \"{veiculo.Placa}\" está estacionado " +
                                          $"na vaga nº {veiculo.NumeroVaga}");
                 }
             }
