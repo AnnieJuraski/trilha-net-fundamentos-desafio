@@ -25,8 +25,6 @@ while (!decimal.TryParse(Console.ReadLine(), out precoPorHora))
     Console.WriteLine("Por favor, digite um valor válido!");
 }
 
-
-
 Estacionamento meuEstacionamento = new Estacionamento(precoInicial, precoPorHora);
 
 

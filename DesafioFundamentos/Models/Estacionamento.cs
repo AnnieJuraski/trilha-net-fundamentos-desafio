@@ -7,7 +7,7 @@ namespace DesafioFundamentos.Models
     {
 
         
-        private List<(string Placa, int NumeroVaga)> _veiculosEstacionados = new List<(string, int)>();
+        private List<(string Placa, int numeroVaga)> _veiculosEstacionados = new List<(string, int)>();
         private decimal PrecoInicial { get; set; }
         private decimal PrecoPorHora { get; set; }
 
@@ -48,7 +48,7 @@ namespace DesafioFundamentos.Models
                     while (true)
                     {
                         numeroDaVaga = random.Next(1, 6);
-                        if (!_veiculosEstacionados.Exists(veiculo => veiculo.NumeroVaga == numeroDaVaga))
+                        if (!_veiculosEstacionados.Exists(veiculo => veiculo.numeroVaga == numeroDaVaga))
                             break;
                     }
 
@@ -92,7 +92,7 @@ namespace DesafioFundamentos.Models
                     _veiculosEstacionados.Remove(veiculoASerRemovido);
 
                     Console.WriteLine($"O veículo com a placa \"{veiculoASerRemovido.Placa}\" foi removido " +
-                                         $"e a vaga de nº {veiculoASerRemovido.NumeroVaga} está livre. \n" +
+                                         $"e a vaga de nº {veiculoASerRemovido.numeroVaga} está livre. \n" +
                                          $"O valor a ser pago é de {valorTotal.ToString("C")}");
                 }
                 else
@@ -116,7 +116,7 @@ namespace DesafioFundamentos.Models
                 foreach(var veiculo in _veiculosEstacionados)
                 {
                     Console.WriteLine($"O veículo com a placa \"{veiculo.Placa}\" está estacionado " +
-                                         $"na vaga nº {veiculo.NumeroVaga}");
+                                         $"na vaga nº {veiculo.numeroVaga}");
                 }
             }
             else
